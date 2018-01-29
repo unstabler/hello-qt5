@@ -21,7 +21,7 @@ MainWindow::~MainWindow()
 void MainWindow::initialize() {
     this->connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(onPushButtonClicked()));
     this->connect(ui->textEdit, SIGNAL(textChanged()), this, SLOT(onMessageChanged()));
-    this->setWindowTitle("치즈는 치즈치즈해! > _<)");
+    this->setWindowTitle(tr("치즈는 치즈치즈해! > _<)"));
     ui->statusBar->showMessage("Hello, World! ;)");
 }
 
@@ -33,7 +33,7 @@ void MainWindow::onPushButtonClicked()
                       tr("입력 확인"),
                       tr("입력하신 메시지는 %1 입니다").arg(message),
                       QMessageBox::Ok | QMessageBox::Cancel
-                  );
+                   );
 
     if (result == QMessageBox::Cancel) {
         this->makeAMess();
@@ -61,7 +61,10 @@ void MainWindow::makeAMess()
             this->makeAMess();
             break;
         case QMessageBox::Help:
-            QMessageBox::information(this, tr("알았어요"), tr("이번 한 번만 특별히 봐 줄게요.\n앞으로는 조심하도록 해요."));
+            QMessageBox::information(
+                        this,
+                        tr("알았어요"), tr("이번 한 번만 특별히 봐 줄게요.\n앞으로는 조심하도록 해요.")
+            );
             break;
         default:
             break;
