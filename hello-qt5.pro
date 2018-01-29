@@ -4,6 +4,7 @@
 #
 #-------------------------------------------------
 
+CONFIG   += c++14
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -24,11 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp
+        src/main.cpp \
+        src/mainwindow.cpp
 
 HEADERS += \
-        mainwindow.hpp
+        src/mainwindow.hpp
 
 FORMS += \
-        mainwindow.ui
+        src/mainwindow.ui
