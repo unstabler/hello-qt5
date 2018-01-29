@@ -55,8 +55,7 @@ void MainWindow::makeAMess()
 
     switch (result) {
         case QMessageBox::Abort:
-            std::cerr << "흥입니다" << std::endl;
-            std::abort();
+            qFatal("%s", qPrintable(tr("흥입니다")));
         case QMessageBox::Retry:
             this->makeAMess();
             break;
